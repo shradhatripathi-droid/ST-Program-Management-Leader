@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-label="In Person Payment Strategies 2025 roadmap">
+  <rect width="960" height="320" rx="16" fill="#0f172a"/>
+  <text x="480" y="34" text-anchor="middle" fill="#38bdf8" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">In Person Payment Strategies 2025+</text>
+  <text x="480" y="56" text-anchor="middle" fill="#94a3b8" font-family="Inter,Segoe UI,sans-serif" font-size="13">Multi-year roadmap · QR · Tap to Pay · Android Contactless · AI Merchant Experiences</text>
+
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <!-- Year lanes -->
+    <rect x="40" y="80" width="280" height="200" rx="14" fill="#111827" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="180" y="108" text-anchor="middle" fill="#c4b5fd" font-size="14" font-weight="700">Year 1 · Foundation</text>
+    <rect x="60" y="125" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="180" y="149" text-anchor="middle" fill="#e2e8f0" font-size="11">Apple Tap to Pay (Live)</text>
+    <rect x="60" y="172" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="180" y="196" text-anchor="middle" fill="#e2e8f0" font-size="11">QR Payment Enablement</text>
+    <rect x="60" y="219" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="180" y="243" text-anchor="middle" fill="#e2e8f0" font-size="11">Network Certifications</text>
+
+    <polygon points="330,180 350,180 350,170 370,180 350,190 350,180" fill="#64748b"/>
+
+    <rect x="380" y="80" width="280" height="200" rx="14" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="520" y="108" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="700">Year 2 · Scale</text>
+    <rect x="400" y="125" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="520" y="149" text-anchor="middle" fill="#e2e8f0" font-size="11">Android Tap2Pay Rollout</text>
+    <rect x="400" y="172" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="520" y="196" text-anchor="middle" fill="#e2e8f0" font-size="11">In-Person RTP Integration</text>
+    <rect x="400" y="219" width="240" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="520" y="243" text-anchor="middle" fill="#e2e8f0" font-size="11">Merchant Onboarding at Scale</text>
+
+    <polygon points="670,180 690,180 690,170 710,180 690,190 690,180" fill="#64748b"/>
+
+    <rect x="720" y="80" width="200" height="200" rx="14" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="820" y="108" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">Year 3 · Innovate</text>
+    <rect x="740" y="125" width="160" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="820" y="149" text-anchor="middle" fill="#e2e8f0" font-size="11">AI-Driven Checkout</text>
+    <rect x="740" y="172" width="160" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="820" y="196" text-anchor="middle" fill="#e2e8f0" font-size="11">Smart Merchant Insights</text>
+    <rect x="740" y="219" width="160" height="38" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="820" y="243" text-anchor="middle" fill="#e2e8f0" font-size="11">Global In-Person Expansion</text>
+  </g>
+
+  <rect x="40" y="295" width="880" height="12" rx="6" fill="#1e293b"/>
+  <rect x="40" y="295" width="293" height="12" rx="6" fill="#818cf8"/>
+  <rect x="333" y="295" width="293" height="12" rx="6" fill="#38bdf8"/>
+  <rect x="626" y="295" width="294" height="12" rx="6" fill="#34d399"/>
+</svg>

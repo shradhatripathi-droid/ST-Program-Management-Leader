@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Network tokenization scaling pipeline">
+  <rect width="960" height="300" rx="16" fill="#0f172a"/>
+  <text x="480" y="34" text-anchor="middle" fill="#38bdf8" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">Network Tokenization  Scaling Pipeline</text>
+  <text x="480" y="56" text-anchor="middle" fill="#94a3b8" font-family="Inter,Segoe UI,sans-serif" font-size="13">20 ’ 1.9M txns/month (91×) · 97.3% auth rate (+11.75pp) · $810M revenue</text>
+
+  <!-- Funnel stages -->
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <polygon points="120,90 280,90 260,140 140,140" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="200" y="118" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Assess</text>
+    <text x="200" y="132" text-anchor="middle" fill="#94a3b8" font-size="10">20 txns/mo baseline</text>
+
+    <polygon points="280,90 440,90 420,140 260,140" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="350" y="118" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Integrate</text>
+    <text x="350" y="132" text-anchor="middle" fill="#94a3b8" font-size="10">Visa Token Service</text>
+
+    <polygon points="440,90 600,90 580,140 420,140" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="510" y="118" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Scale</text>
+    <text x="510" y="132" text-anchor="middle" fill="#94a3b8" font-size="10">Wallets · BNPL · limits</text>
+
+    <polygon points="600,90 760,90 740,140 580,140" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+    <text x="670" y="118" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Optimize</text>
+    <text x="670" y="132" text-anchor="middle" fill="#94a3b8" font-size="10">Auth rate tuning</text>
+
+    <polygon points="760,90 920,90 900,140 740,140" fill="rgba(52,211,153,0.2)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="830" y="118" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">1.9M/mo</text>
+    <text x="830" y="132" text-anchor="middle" fill="#6ee7b7" font-size="10">97.3% auth</text>
+  </g>
+
+  <!-- Growth line chart (simplified SVG) -->
+  <text x="60" y="175" fill="#64748b" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="600">GROWTH TRAJECTORY</text>
+  <line x1="80" y1="250" x2="880" y2="250" stroke="#334155" stroke-width="1"/>
+  <line x1="80" y1="190" x2="80" y2="250" stroke="#334155" stroke-width="1"/>
+  <polyline points="80,248 200,240 340,220 500,180 660,130 820,95" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="820" cy="95" r="6" fill="#34d399"/>
+  <text x="830" y="99" fill="#6ee7b7" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="600">1.9M</text>
+  <text x="80" y="268" fill="#64748b" font-family="Inter,Segoe UI,sans-serif" font-size="10">Start</text>
+  <text x="500" y="268" text-anchor="middle" fill="#64748b" font-family="Inter,Segoe UI,sans-serif" font-size="10">Scale-up</text>
+  <text x="820" y="268" text-anchor="middle" fill="#64748b" font-family="Inter,Segoe UI,sans-serif" font-size="10">Current</text>
+
+  <!-- Auth rate comparison -->
+  <rect x="60" y="278" width="400" height="12" rx="6" fill="#1e293b"/>
+  <rect x="60" y="278" width="170" height="12" rx="6" fill="#64748b"/>
+  <text x="470" y="289" fill="#94a3b8" font-family="Inter,Segoe UI,sans-serif" font-size="10">Before: 85.6%</text>
+  <rect x="500" y="278" width="400" height="12" rx="6" fill="#1e293b"/>
+  <rect x="500" y="278" width="388" height="12" rx="6" fill="#34d399"/>
+  <text x="910" y="289" text-anchor="end" fill="#6ee7b7" font-family="Inter,Segoe UI,sans-serif" font-size="10">After: 97.3%</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-label="Flipkart">
+  <rect x="0" y="4" width="34" height="34" rx="6" fill="#FFE500"/>
+  <path fill="#2874F0" d="M10 30 V14 h6 c4 0 6.5 2 6.5 5.2 0 2.2-1.2 3.8-3 4.6 L24 30 h-4 l-3.8-5.5 h-2.2 V30 Z M14 20 h2 c1.6 0 2.5-.8 2.5-2 0-1.3-.9-2-2.5-2 H14 Z"/>
+  <path fill="#2874F0" d="M8 12 L5 14 L6 15 L9 13 Z M5 16 L2 18 L3 19 L6 17 Z M5 20 L2 22 L3 23 L6 21 Z"/>
+  <text x="42" y="31" fill="#2874F0" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5">Flipkart</text>
+</svg>
