@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shradha Tripathi ù Product Management Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --surface: #111827;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+      --border: rgba(148, 163, 184, 0.18);
+      --success: #34d399;
+      --warning: #fbbf24;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 35%),
+                  radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.10), transparent 30%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .hero { text-align: center; margin-bottom: 2rem; }
+
+    .hero-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #0c4a6e 100%);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      text-align: left;
+    }
+
+    .hero-photo-link {
+      flex-shrink: 0;
+      line-height: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(56, 189, 248, 0.55);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-photo-link:hover {
+      transform: scale(1.03);
+      border-color: #38bdf8;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      background: #1e293b;
+    }
+
+    .hero-text { min-width: 0; }
+
+    .hero-text h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #f8fafc;
+      line-height: 1.15;
+    }
+
+    .hero-title {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .badges { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin: 1.5rem 0; }
+    .badges a img { display: block; }
+    .tagline { font-size: 1.1rem; color: #cbd5e1; max-width: 760px; margin: 0 auto; }
+
+    @media (max-width: 640px) {
+      .hero-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    section {
+      background: rgba(17, 24, 39, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    h2 { margin: 0 0 1rem; font-size: 1.35rem; color: var(--accent); letter-spacing: -0.02em; }
+    h3 { margin: 0; font-size: 1.15rem; }
+    .meta { color: var(--muted); margin: 0.25rem 0 1rem; font-size: 0.95rem; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--border); padding: 0.75rem 0.9rem; text-align: left; vertical-align: top; }
+    th { background: rgba(30, 41, 59, 0.8); color: #e2e8f0; width: 28%; }
+    tr:nth-child(even) td { background: rgba(15, 23, 42, 0.35); }
+
+    .edu-logo {
+      height: 32px;
+      width: auto;
+      vertical-align: middle;
+      margin-right: 8px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .skill {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #bae6fd;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    blockquote {
+      margin: 1rem 0 0;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid var(--accent-2);
+      background: rgba(129, 140, 248, 0.08);
+      border-radius: 0 12px 12px 0;
+      color: #ddd6fe;
+      font-style: italic;
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.45rem; }
+
+    .company-card {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .company-card:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .company-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px;
+      object-fit: contain;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .company-logo.dark-bg {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .info-grid strong { color: #e2e8f0; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .metric {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .metric-value { font-size: 1.35rem; font-weight: 700; color: var(--success); line-height: 1.2; }
+    .metric-label { color: var(--muted); font-size: 0.85rem; margin-top: 0.35rem; }
+
+    .mermaid {
+      background: rgba(15, 23, 42, 0.45);
+      border-radius: 12px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    .visual-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .visual-card {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .visual-card img,
+    .visual-card svg,
+    .diagram-slot svg {
+      width: 100%;
+      display: block;
+    }
+
+    .visual-card figcaption {
+      padding: 0.75rem 1rem 1rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .chart-card {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1rem 0.75rem;
+    }
+
+    .chart-card h4 {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .chart-wrap { position: relative; height: 220px; }
+
+    .logo-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0;
+    }
+
+    .logo-strip img {
+      height: 28px;
+      width: auto;
+      background: #ffffff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .logo-strip img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .logo-strip img.logo-wordmark {
+      height: 24px;
+      padding: 6px 12px;
+    }
+
+    .logo-strip img.logo-icon {
+      height: 30px;
+      width: 30px;
+      padding: 4px;
+    }
+
+    .company-logo.wordmark {
+      width: auto;
+      min-width: 110px;
+      max-width: 150px;
+      height: 40px;
+      padding: 6px 10px;
+      object-fit: contain;
+    }
+
+    .company-logo.icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      max-width: 52px;
+      padding: 0;
+      object-fit: cover;
+    }
+
+    .connect { text-align: center; color: #cbd5e1; }
+    .connect a { color: var(--accent); text-decoration: none; }
+    .connect a:hover { text-decoration: underline; }
+
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
+
+    details {
+      margin-top: 1rem;
+      background: rgba(15, 23, 42, 0.45);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
+
+    summary { cursor: pointer; font-weight: 600; color: #e2e8f0; }
+
+    .section-lead {
+      color: var(--muted);
+      margin: -0.35rem 0 1rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-banner">
+        <a class="hero-photo-link" href="https://www.linkedin.com/in/shradha-tripathi-7130b82/" target="_blank" rel="noopener noreferrer" title="View LinkedIn profile">
+          <img class="hero-photo" src="./assets/profile.jpg" alt="Shradha Tripathi" onerror="this.onerror=null;this.src='./assets/profile-placeholder.svg';" />
+        </a>
+        <div class="hero-text">
+          <h1>Shradha Tripathi</h1>
+          <p class="hero-title">Product Management Leader</p>
+          <p class="hero-sub">18+ years ù Fintech ù Digital Payments ù AI ù Data Analytics<br />Natick, MA ù shradha.tripathi@gmail.com</p>
+        </div>
+      </div>
+      <div class="badges">
+        <a href="https://www.linkedin.com/in/shradha-tripathi-7130b82/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+        <a href="mailto:shradha.tripathi@gmail.com"><img src="https://img.shields.io/badge/Email-shradha.tripathi%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+        <a href="#"><img src="https://img.shields.io/badge/Location-Natick%2C%20MA-64748b?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Location" /></a>
+      </div>
+      <p class="tagline">Strategic, result-driven enterprise product leader building secure, scalable fintech solutions that bridge technical and business teams to drive revenue growth.</p>
+    </header>
+
+    <section>
+      <h2>Impact at a Glance</h2>
+      <div class="metrics">
+        <div class="metric"><div class="metric-value">18+ yrs</div><div class="metric-label">Product management across fintech, AI, and enterprise platforms</div></div>
+        <div class="metric"><div class="metric-value">$50M+</div><div class="metric-label">Bill Pay AR optimization revenue</div></div>
+        <div class="metric"><div class="metric-value">$20M+</div><div class="metric-label">In-person payments product revenue (Tap to Pay, QR)</div></div>
+        <div class="metric"><div class="metric-value">91ù</div><div class="metric-label">Tokenization scale: 20 to 1.9M txns/month</div></div>
+      </div>
+      <table style="margin-top: 1rem;">
+        <tr><th>Revenue &amp; Value</th><td>$100M+ annual customer value ù $80M projected revenue ù $15M+ new product launches</td></tr>
+        <tr><th>Cost Optimization</th><td>~$50M+ annual savings via interchange optimization ù $639K ACH loss reduction through auto-retry</td></tr>
+        <tr><th>Partners</th><td>Apple ù Chase ù Visa ù Mastercard ù AMEX ù FIS ù Shift4 ù AWS Cryptography</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Trusted By ù Companies &amp; Partners</h2>
+      <p class="section-lead">Organizations and ecosystems where I've built and scaled products.</p>
+      <div class="logo-strip">
+        <img class="logo-wordmark" src="./assets/logo-intuit.svg" alt="Intuit" title="Intuit" />
+        <img class="logo-icon" src="https://cdn.simpleicons.org/amazon/FF9900" alt="Amazon" title="Amazon" />
+        <img class="logo-wordmark" src="./assets/logo-flipkart.svg" alt="Flipkart" title="Flipkart" />
+        <img src="./assets/logo-deutsche-bank.svg" alt="Deutsche Bank" title="Deutsche Bank" />
+        <img src="./assets/logo-apple.svg" alt="Apple" title="Apple" />
+        <img class="logo-wordmark" src="./assets/logo-visa.svg" alt="Visa" title="Visa" />
+        <img src="./assets/logo-mastercard.svg" alt="Mastercard" title="Mastercard" />
+        <img class="logo-wordmark" src="./assets/logo-amex.svg" alt="AMEX" title="AMEX" />
+        <img class="logo-wordmark" src="./assets/logo-aws.svg" alt="AWS" title="AWS" />
+        <img src="./assets/logo-chase.svg" alt="Chase" title="Chase" />
+      </div>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <p>I lead <strong>end-to-end product development</strong> across fintech, digital payments, artificial intelligence, customer engagement, and data analytics. I bridge technical and business teams to create secure, scalable product solutions ù from product vision and roadmap through launch, partner integration, and revenue growth.</p>
+      <blockquote>"Turn customer insights and market opportunities into product roadmaps that ship measurable revenue and platform scale."</blockquote>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <div class="skills">
+        <span class="skill">Strategic Planning &amp; Prioritization</span>
+        <span class="skill">Product Lifecycle Management</span>
+        <span class="skill">Enterprise Applications</span>
+        <span class="skill">Finance Acumen</span>
+        <span class="skill">Agile &amp; Scrum</span>
+        <span class="skill">Data-Driven Decision Making</span>
+        <span class="skill">BillPay &amp; Payment Experience</span>
+        <span class="skill">Digital Wallets &amp; APIs</span>
+        <span class="skill">Global Payments</span>
+        <span class="skill">Payments Fraud &amp; Risk</span>
+        <span class="skill">Platform &amp; API Integration</span>
+        <span class="skill">Partner &amp; Marketplace Management</span>
+        <span class="skill">Security: HSM, Tokenization, Privacy</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Product Leadership Profile</h2>
+      <p class="section-lead">How I drive product strategy, development, and measurable business outcomes.</p>
+      <div class="mermaid">
+mindmap
+  root((Shradha Tripathi))
+    Strategy
+      Product vision &amp; roadmap
+      Market &amp; customer insights
+      Pricing &amp; platform strategy
+    Execution
+      End-to-end product development
+      Agile product delivery
+      Partner &amp; API integration
+    Impact
+      Revenue growth
+      Cost optimization
+      Auth rate &amp; engagement lift
+    Domains
+      Fintech &amp; Payments
+      Bill Pay &amp; AR/AP
+      AI / ML Products
+      Digital Wallets &amp; APIs
+      Enterprise Platforms
+      </div>
+    </section>
+
+    <section>
+      <h2>Career Journey</h2>
+      <div class="mermaid">
+timeline
+    title Career Progression
+    2003-2005 : CSC
+              : Statistical &amp; Financial Analyst
+              : Workforce planning &amp; $1M savings
+    2008-2010 : The Hartford
+              : Financial Analyst / Production Planning
+              : $250M budget &amp; contact center ops
+    2011-2014 : Deutsche Bank
+              : Manager, Business Engineering
+              : Process re-engineering &amp; automation
+    2014-2017 : Flipkart
+              : Senior Manager, Product &amp; Engineering
+              : Seller growth &amp; Big Billion Day
+    2017-2022 : Amazon
+              : Sr. Technical Product Manager, Alexa
+              : Multimodal devices &amp; $90M AI savings
+    2022-Present : Intuit
+                 : Staff Product Manager, QB Payments
+                 : Bill Pay, Tap to Pay, tokenization, API platform
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo" src="https://cdn.simpleicons.org/intuit/236CFF" alt="Intuit logo" />
+          <div>
+            <h3>Intuit ù Staff Product Manager, Technical ù QuickBooks Payments Platform</h3>
+            <p class="meta">Boston, MA ù 2022 ù Present</p>
+          </div>
+        </div>
+        <div class="info-grid">
+          <strong>Focus</strong><span>Bill Pay AR ù In-Person Payments ù Tokenization ù Unified API ù Partner Ecosystem</span>
+          <strong>Partners</strong><span>Apple, Chase, Visa, Mastercard, AMEX, FIS, Shift4, AWS Cryptography</span>
+        </div>
+        <table>
+          <tr><th>Bill Pay AR Expansion</th><td>Built and scaled Bill Pay payment rails for QuickBooks merchants ù ACH, check, and Single-Use Virtual Card ù driving <strong>$50M+ optimization revenue</strong>; now leading cross-border and credit card acceptance to strengthen Accounts Receivable workflows</td></tr>
+          <tr><th>In-Person Payments</th><td>Delivered Apple Tap to Pay, QR payments, and POS strategy ù enabling iPhone-based contactless acceptance and shaping Intuit's 2025+ in-person payments roadmap ù <strong>$20M+ revenue</strong></td></tr>
+          <tr><th>Network Tokenization</th><td>Implemented Visa Token Service at scale ù <strong>20 ? 1.9M txns/month (91ù)</strong> ù <strong>97.3% auth rate (+11.75pp)</strong> ù boosted first-attempt invoice completion ù <strong>$8ù10M annual revenue</strong> via wallet expansion, BNPL, higher limits, and optimized risk thresholds</td></tr>
+          <tr><th>Payments Cost Optimization</th><td>Launched automated interchange optimization with Chase, Visa, AMEX, and Mastercard ù <strong>~$50M+ annual savings</strong> ù <strong>$639K ACH loss reduction</strong> through auto-retry</td></tr>
+          <tr><th>Unified API &amp; Platform Strategy</th><td>Enabled Unified API across multiple Payments APIs for platform expansion and modernization ù Created pricing and platform strategy for third-party API developers</td></tr>
+          <tr><th>Enterprise Partner Products</th><td>End-to-end proposals for LA Clippers, LoanPro, and Teamwork ù supporting <strong>$100B+ potential processing volume</strong></td></tr>
+        </table>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo icon" src="https://cdn.simpleicons.org/amazon/FF9900" alt="Amazon logo" />
+          <div>
+            <h3>Amazon ù Sr. Technical Product Manager ù Alexa Multimodal Devices</h3>
+            <p class="meta">Boston, MA ù 2017 ù 2022</p>
+          </div>
+        </div>
+        <table>
+          <tr><th>Rotating Content Panel</th><td>Visionary product lead ù launched multiple features on Alexa Multimodal devices via APIs ù personalized, cloud-driven experience ù <strong>+20% customer engagement</strong></td></tr>
+          <tr><th>AI/ML Transcription &amp; Annotation</th><td>Launched innovative AI/ML product for auto transcription and annotation ù ASR &amp; NLU accuracy improvements ù <strong>$90M annual cost savings</strong></td></tr>
+          <tr><th>Data Services Product</th><td>Created Data Services team (<strong>150 people</strong>) for data collection, script testing, and beta deployments ù enabling Alexa launch in India and global markets</td></tr>
+          <tr><th>ADS Customer Solutions</th><td>Launched ADS Customer Solutions and Prototyping Services ù faster business outcome realization for Amazon ML customers</td></tr>
+          <tr><th>Integrated GSR / Privacy</th><td>Global Alexa privacy product ù cut Alexa audio exposure by <strong>3ù</strong> and significantly reduced financial exposure</td></tr>
+        </table>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo wordmark" src="./assets/logo-flipkart-light.svg" alt="Flipkart logo" />
+          <div>
+            <h3>Flipkart ù Senior Manager, Product &amp; Engineering</h3>
+            <p class="meta">Bangalore, India ù 2014 ù 2017</p>
+          </div>
+        </div>
+        <table>
+          <tr><th>Tier 2/3 Seller Growth</th><td><strong>50%+ growth</strong> via product campaigns increasing promotional opt-in ù established 20-member Sellers Relationship Management (SRM) Intelligence team</td></tr>
+          <tr><th>Big Billion Day Sale '14</th><td>T3 sellers contributed <strong>30%+ of total units</strong> ù achieved <strong>150%+ of target</strong></td></tr>
+          <tr><th>Seller Experience Product</th><td>45-member process management team ù <strong>150%+ seller NPS improvement</strong> via sentiment analysis using hypothesis &amp; regression models</td></tr>
+        </table>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo" src="https://cdn.simpleicons.org/deutschebank/0018A8" alt="Deutsche Bank logo" />
+          <div>
+            <h3>Deutsche Bank ù Manager, Business Engineering</h3>
+            <p class="meta">Bangalore, India ù 2011 ù 2014</p>
+          </div>
+        </div>
+        <ul>
+          <li>Established a <strong>10-analyst team</strong> for Business Process Re-engineering</li>
+          <li><strong>175% of yearly cost-reduction target</strong> via QTP automation of reference data security setup</li>
+          <li><strong>94% reduction</strong> in trade/security setup exceptions (Bloomberg ? Traders)</li>
+          <li>Launched <strong>"Power of One"</strong> idea-generation campaign ù recognized by DB Management</li>
+        </ul>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo" src="https://cdn.simpleicons.org/thehartford/003DA5" alt="The Hartford logo" />
+          <div>
+            <h3>The Hartford ù Financial Analyst / Production Planning Consultant</h3>
+            <p class="meta">Hartford, CT ù 2008 ù 2010</p>
+          </div>
+        </div>
+        <ul>
+          <li>End-to-end strategic &amp; financial plans for Small Commercial and Middle Market Operations</li>
+          <li>Operating plan for <strong>3 contact centers</strong> ù <strong>$250M budget</strong> ownership</li>
+          <li>Staffing &amp; hiring process owner ù <strong>99% forecast accuracy</strong></li>
+        </ul>
+      </div>
+
+      <div class="company-card">
+        <div class="company-header">
+          <img class="company-logo" src="https://cdn.simpleicons.org/csc/0033A0" alt="CSC logo" />
+          <div>
+            <h3>CSC ù Statistical and Financial Analyst</h3>
+            <p class="meta">Albany, NY ù 2003 ù 2005</p>
+          </div>
+        </div>
+        <ul>
+          <li>Workforce planning &amp; forecasting for <strong>3 eMedNY (NY Medicaid) call centers</strong></li>
+          <li>Analytics-driven staffing optimization ù <strong>$1M cost savings</strong></li>
+          <li>Nominated for <strong>President's Excellence Award</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education &amp; Certifications</h2>
+      <table>
+        <tr>
+          <th>Designing and Building AI Products and Services</th>
+          <td>MIT, Boston, MA</td>
+        </tr>
+        <tr>
+          <th>MS, Information Science</th>
+          <td>State University of New York, Albany, NY</td>
+        </tr>
+        <tr><th>Six Sigma Black Belt</th><td>Indian Statistical Institute, India</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Product Impact &amp; Visuals</h2>
+      <p class="section-lead">Product flows, platform architecture, and quantified outcomes from flagship work.</p>
+
+      <div class="visual-grid" style="margin-bottom: 1.5rem;">
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="product-development"></div>
+          <figcaption>Product development framework ù Discover, Define, Build, Launch, Measure.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="partner-ecosystem"></div>
+          <figcaption>Partner ecosystem &amp; marketplace integration ù Apple, Chase, Visa, FIS, Shift4, AWS.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="bill-pay-flow"></div>
+          <figcaption>Bill Pay AR product ù ACH, check, SUVC, cross-border, credit card ù $50M+ revenue.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="apple-tap-to-pay"></div>
+          <figcaption>In-person payments ù Apple Tap to Pay, QR, POS strategy ù $20M+ revenue.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="in-person-payments"></div>
+          <figcaption>In-person payments product roadmap 2025+ ù Tap to Pay, QR, cross-border, AI checkout.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="tokenization"></div>
+          <figcaption>Network tokenization product ù 91ù scale, 97.3% auth rate, $8ù10M revenue opportunity.</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <div class="diagram-slot" data-diagram="unified-api"></div>
+          <figcaption>Unified Payments API ù platform expansion, developer pricing, $100B+ partner volume.</figcaption>
+        </figure>
+      </div>
+
+      <h3 style="color: #e2e8f0; margin: 0 0 1rem; font-size: 1rem;">Amazon ù AI/ML Product Operating Model</h3>
+      <div class="mermaid" style="margin-bottom: 1.5rem;">
+flowchart LR
+    A["150-Person\nData Services Product"] --> B["ASR/NLU\nTranscription"]
+    B --> C["Model Training\n&amp; Annotation"]
+    C --> D["Alexa India\n&amp; Global Launch"]
+    D --> E["$90M Annual\nCost Savings"]
+    A --> F["Integrated GSR\nPrivacy Product"]
+    F --> G["3x Audio\nExposure Reduction"]
+    A --> H["Rotating Content\nPanel"]
+    H --> I["+20%\nEngagement"]
+
+    style E fill:#065f46,stroke:#34d399,color:#ecfdf5
+    style G fill:#065f46,stroke:#34d399,color:#ecfdf5
+    style I fill:#065f46,stroke:#34d399,color:#ecfdf5
+      </div>
+
+      <h3 style="color: #e2e8f0; margin: 1.5rem 0 1rem; font-size: 1rem;">Interactive Impact Charts</h3>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h4>Network Tokenization Growth (txns/month)</h4>
+          <div class="chart-wrap"><canvas id="tokenChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>Product Revenue Impact ($M)</h4>
+          <div class="chart-wrap"><canvas id="revenueChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>Authorization Rate Improvement</h4>
+          <div class="chart-wrap"><canvas id="authChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>Cost Savings by Product ($M)</h4>
+          <div class="chart-wrap"><canvas id="savingsChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>Career Impact by Company ($M)</h4>
+          <div class="chart-wrap"><canvas id="careerChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>Product Portfolio ù Revenue &amp; Value ($M)</h4>
+          <div class="chart-wrap"><canvas id="portfolioChart"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="connect">
+      <h2>Connect</h2>
+      <p>Natick, MA ù 781-774-9838 ù <a href="mailto:shradha.tripathi@gmail.com">shradha.tripathi@gmail.com</a> ù <a href="https://www.linkedin.com/in/shradha-tripathi-7130b82/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      <p><em>Open to conversations on product leadership, fintech platform strategy, payments innovation, and AI product development.</em></p>
+    </section>
+
+    <footer>Built for GitHub ù Product Management Leader Portfolio ù 2027</footer>
+  </div>
+
+  <script src="assets/diagrams.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        if (typeof loadDiagrams === 'function') loadDiagrams();
+      } catch (err) {
+        console.warn('Diagrams failed to load:', err);
+      }
+
+      try {
+        if (window.mermaid) {
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            themeVariables: {
+              primaryColor: '#1e3a5f',
+              primaryTextColor: '#f8fafc',
+              primaryBorderColor: '#38bdf8',
+              lineColor: '#64748b',
+              secondaryColor: '#111827',
+              tertiaryColor: '#0f172a'
+            }
+          });
+          mermaid.run().catch(function (err) { console.warn('Mermaid failed:', err); });
+        }
+      } catch (err) {
+        console.warn('Mermaid init failed:', err);
+      }
+
+      try {
+        if (typeof Chart !== 'undefined') {
+          initCharts();
+        }
+      } catch (err) {
+        console.warn('Charts failed:', err);
+      }
+    });
+
+    function initCharts() {
+    const chartDefaults = {
+      color: '#94a3b8',
+      grid: 'rgba(148, 163, 184, 0.12)',
+      font: 'Inter, system-ui, sans-serif'
+    };
+
+    Chart.defaults.color = chartDefaults.color;
+    Chart.defaults.font.family = chartDefaults.font;
+
+    new Chart(document.getElementById('tokenChart'), {
+      type: 'line',
+      data: {
+        labels: ['Start', 'Q2', 'Q3', 'Q4', 'Current'],
+        datasets: [{
+          label: 'Transactions (K/month)',
+          data: [0.02, 0.4, 0.9, 1.4, 1900],
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56, 189, 248, 0.15)',
+          fill: true,
+          tension: 0.35,
+          pointRadius: 4,
+          pointBackgroundColor: '#38bdf8'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { grid: { color: chartDefaults.grid }, title: { display: true, text: 'K txns/mo' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('revenueChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Bill Pay AR', 'In-Person', 'Tokenization', 'Cost Opt.'],
+        datasets: [{
+          label: '$M',
+          data: [50, 20, 9, 50],
+          backgroundColor: ['#818cf8', '#38bdf8', '#34d399', '#fbbf24'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { grid: { color: chartDefaults.grid }, title: { display: true, text: '$ Millions' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('authChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Before Tokenization', 'After Tokenization'],
+        datasets: [{
+          label: 'Auth Rate (%)',
+          data: [85.55, 97.3],
+          backgroundColor: ['#64748b', '#34d399'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { min: 80, max: 100, grid: { color: chartDefaults.grid }, title: { display: true, text: '%' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('savingsChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Interchange Optimization', 'AI/ML (Amazon)', 'ACH Auto-Retry', 'Workforce Analytics'],
+        datasets: [{
+          data: [50, 90, 0.639, 1],
+          backgroundColor: ['#38bdf8', '#818cf8', '#34d399', '#fbbf24'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, padding: 14 } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('careerChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Intuit', 'Amazon', 'Flipkart', 'Deutsche Bank', 'Hartford/CSC'],
+        datasets: [{
+          label: 'Impact ($M)',
+          data: [129, 90, 0, 0.02, 1.25],
+          backgroundColor: ['#236CFF', '#FF9900', '#047BD6', '#0018A8', '#64748b'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: chartDefaults.grid }, title: { display: true, text: '$ Millions (approx.)' } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('portfolioChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Bill Pay AR', 'In-Person', 'Tokenization', 'Cost Opt.', 'API Platform'],
+        datasets: [{
+          label: 'Target ($M)',
+          data: [50, 20, 9, 50, 100],
+          backgroundColor: '#38bdf8',
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { grid: { color: chartDefaults.grid }, title: { display: true, text: '$ Millions' } },
+          x: { grid: { display: false }, ticks: { maxRotation: 45, minRotation: 45 } }
+        }
+      }
+    });
+    }
+  </script>
+</body>
+</html>
