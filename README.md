@@ -1,4 +1,4 @@
-# Program Management Leader  Shradha Tripathi
+# Program Management Leader Â Shradha Tripathi
 
 Interactive portfolio: career arc, impact metrics, and experience across fintech, AI/ML, and enterprise platforms.
 
@@ -8,7 +8,7 @@ Interactive portfolio: career arc, impact metrics, and experience across fintech
 
 - 18+ years leading programs and products at Intuit, Amazon, Flipkart, Deutsche Bank, The Hartford, and CSC
 - $220M+ revenue and savings driven across career
-- Staff PM, Technical  QuickBooks Payments Platform @ Intuit
+- Staff PM, Technical Â QuickBooks Payments Platform @ Intuit
 
 ## Contact
 

@@ -18,7 +18,8 @@ HARR = "\u2194"
 
 FILES = [
     ROOT / "index.html",
-    ROOT / "assets" / "diagrams.js",
+    ROOT / "index-v2.html",
+    ROOT / "diagrams.js",
     ROOT / "README.md",
 ]
 
@@ -59,39 +60,39 @@ def fix_index_html(text: str) -> str:
 
     text = text.replace(
         '<img class="logo-icon" src="https://cdn.simpleicons.org/amazon/FF9900" alt="Amazon" title="Amazon" />',
-        '<img class="logo-icon" src="./assets/logo-amazon.png" alt="Amazon" title="Amazon" />',
+        '<img class="logo-icon" src="./logo-amazon.png" alt="Amazon" title="Amazon" />',
     )
     text = text.replace(
         '<img class="company-logo" src="https://cdn.simpleicons.org/intuit/236CFF" alt="Intuit logo" />',
-        '<img class="company-logo" src="./assets/logo-intuit.svg" alt="Intuit logo" />',
+        '<img class="company-logo" src="./logo-intuit.svg" alt="Intuit logo" />',
     )
     text = text.replace(
         '<img class="company-logo icon" src="https://cdn.simpleicons.org/amazon/FF9900" alt="Amazon logo" />',
-        '<img class="company-logo icon" src="./assets/logo-amazon.png" alt="Amazon logo" />',
+        '<img class="company-logo icon" src="./logo-amazon.png" alt="Amazon logo" />',
     )
     text = text.replace(
         '<img class="company-logo" src="https://cdn.simpleicons.org/deutschebank/0018A8" alt="Deutsche Bank logo" />',
-        '<img class="company-logo" src="./assets/logo-deutsche-bank.svg" alt="Deutsche Bank logo" />',
+        '<img class="company-logo" src="./logo-deutsche-bank.svg" alt="Deutsche Bank logo" />',
     )
     text = text.replace(
         '<img class="company-logo" src="https://cdn.simpleicons.org/thehartford/003DA5" alt="The Hartford logo" />',
-        '<img class="company-logo" src="./assets/logo-hartford.png" alt="The Hartford logo" />',
+        '<img class="company-logo" src="./logo-hartford.png" alt="The Hartford logo" />',
     )
     text = text.replace(
         '<img class="company-logo" src="https://cdn.simpleicons.org/csc/0033A0" alt="CSC logo" />',
-        '<img class="company-logo" src="./assets/logo-csc.png" alt="CSC logo" />',
+        '<img class="company-logo" src="./logo-csc.png" alt="CSC logo" />',
     )
 
     education = """      <table>
         <tr>
-          <th><img class="edu-logo" src="./assets/logo-mit.png" alt="MIT" /> Designing and Building AI Products and Services</th>
+          <th><img class="edu-logo" src="./logo-mit.png" alt="MIT" /> Designing and Building AI Products and Services</th>
           <td>MIT, Boston, MA</td>
         </tr>
         <tr>
-          <th><img class="edu-logo" src="./assets/logo-suny-albany.png" alt="SUNY Albany" /> MS, Information Science</th>
+          <th><img class="edu-logo" src="./logo-suny-albany.png" alt="SUNY Albany" /> MS, Information Science</th>
           <td>State University of New York, Albany, NY</td>
         </tr>
-        <tr><th><img class="edu-logo" src="./assets/logo-isi.png" alt="Indian Statistical Institute" /> Six Sigma Black Belt</th><td>Indian Statistical Institute, India</td></tr>
+        <tr><th><img class="edu-logo" src="./logo-isi.png" alt="Indian Statistical Institute" /> Six Sigma Black Belt</th><td>Indian Statistical Institute, India</td></tr>
       </table>"""
 
     text = re.sub(
@@ -106,10 +107,6 @@ def fix_index_html(text: str) -> str:
 
 
 def main() -> None:
-    product_diagrams = ROOT.parent / "product-management-leader" / "assets" / "diagrams.js"
-    if product_diagrams.exists():
-        shutil.copy2(product_diagrams, ROOT / "assets" / "diagrams.js")
-
     for path in FILES:
         if not path.exists():
             continue
